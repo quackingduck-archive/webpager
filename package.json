@@ -20,6 +20,6 @@
   { "name": "Myles Byrne"
   , "email": "myles@myles.id.au"
   }
-, "scripts": { "test" : "echo test | node index.js test" }
+, "scripts": { "test" : "node index.js test" }
 , "license": "MIT"
 }
