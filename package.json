@@ -1,25 +1,30 @@
-{ "name": "webpager"
-, "version": "0.1.0"
-, "description": "Pipes html from stdin into a browser tab"
-, "main": "index.js"
-, "bin": { "webpager": "index.js" }
-, "repository":
-  { "type": "git"
-  , "url": "http://github.com/quackingduck/webpager.git"
-  }
-, "keywords":
-  [ "browser"
-  , "stdin"
-  , "pager"
-  ]
-, "dependencies":
-  { "combined-stream": "~0.0.4"
-  , "resumer": "~0.0.0"
-  }
-, "author":
-  { "name": "Myles Byrne"
-  , "email": "myles@myles.id.au"
-  }
-, "scripts": { "test" : "node index.js test" }
-, "license": "MIT"
+{
+  "name": "webpager",
+  "version": "0.2.0",
+  "description": "Pipes html from stdin into a browser tab",
+  "main": "index.js",
+  "bin": {
+    "webpager": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/quackingduck/webpager.git"
+  },
+  "keywords": [
+    "browser",
+    "stdin",
+    "pager"
+  ],
+  "dependencies": {
+    "combined-stream": "~0.0.4",
+    "resumer": "~0.0.0"
+  },
+  "author": {
+    "name": "Myles Byrne",
+    "email": "myles@myles.id.au"
+  },
+  "scripts": {
+    "test": "node index.js test"
+  },
+  "license": "MIT"
 }
