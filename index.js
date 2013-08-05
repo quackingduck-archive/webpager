@@ -11,7 +11,7 @@ var server = http.createServer(function(req, res){
   // Send all of the headers
   res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
   // Hook up the response stream
-  var s = responseStream()
+  var s = responseStream(process.stdin)
   s.on('end', exitNextTick)
   s.pipe(res)
 })
@@ -51,10 +51,10 @@ var bigChunkOfNothing = function(size, blank){
   return str
 }
 
-var responseStream = function(){
+var responseStream = function(inputStream){
   var cs = combinedStream.create()
   cs.append(htmlHeader())
-  cs.append(process.stdin)
+  cs.append(inputStream)
   cs.append(htmlFooter())
   return cs
 }
@@ -65,7 +65,7 @@ var openBrowser = function() {
 
 var port = 6003 // http://www.urbandictionary.com/define.php?term=pager%20code
 
-// Test with: ping google.com | ./index.js test
+// Test with: node index.js test
 var runTests = process.argv[2] === 'test'
 
 if (!runTests) server.listen(port, openBrowser)
@@ -74,6 +74,7 @@ else {
 
   assert.equal(bigChunkOfNothing(10).length, 10)
 
-  var rs = responseStream()
-  rs.pipe(process.stdout)
+  console.log('*** HTML fragment input:')
+  var html = resumer().queue('<h1>beep</h1>\n').end()
+  responseStream(html).pipe(process.stdout)
 }
