@@ -2,8 +2,8 @@
 
 Pipe html chunks to the browser:
 
-    $ echo "<h1>beep</h1>" | webpager
-    $ echo "*beep*" | markdown | webpager
+    $ echo "<strong>boom</strong>" | webpager
+    $ echo "*boom*" | markdown | webpager
 
 Heavily inspired by [bcat] by Ryan Tomayko which was in turn inspired by [TextMate's html output][tmho] by Allan Odgaard.
 
